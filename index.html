@@ -4,23 +4,35 @@
   <meta charset="utf-8">
   <script src="lib/jquery-3.1.1.min.js"></script>
   <script src="kot-ang.js"></script>
-
+  <style type="text/css">
+  .hidden { visibility: hidden; }
+  .wrong { color: red; font-weight: bold; }
+  .theVerb { font-weight: bold; }
+  </style>
+  <script>
+  $(document).ready(verbsInit);
   </script>
 </head>
 <body>
 
 
 <h1> Chcę koty </h1>
-
   <p>
-    Odmień czasownik: <span class="czaso" id="verb"></span>.
+    Odmień czasownik: <span class="theVerb" id="verb"></span>.
   </p>
 
-  <input type="text" placeholder="Pierwsza forma" id="st">
-  <input type="text" placeholder="Druga forma" id="nd">
-  <input type="text" placeholder="Trzecia forma" id ="rd">
+  <p>
+    Liczba kotów: <span id="kittenCounter"></span> (combo: <span id="kittenCombo"></span>).
+  </p>
 
-  <button type="button" onclick="nextVerb()">Sprawdźmy...</button>
+  <input type="text" placeholder="Pierwsza forma" autocomplete="off" id="st">
+  <input type="text" placeholder="Druga forma" autocomplete="off" id="nd">
+  <input type="text" placeholder="Trzecia forma" autocomplete="off" id ="rd">
 
-
+  <button type="button" onclick="checkVerb()" id="checkBtn">Sprawdźmy...</button>
+  <button type="button" onclick="nextVerb()" id="nextBtn">Następny</button>
+  <div>
+    <img id="kitten" class="hidden">
+  </div>
 </body>
+</html>
